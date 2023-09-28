@@ -1,5 +1,10 @@
 @extends('dashboard.master')
 
+
+@section('styles')
+
+@endsection
+
 @section('content')
 
 
@@ -19,7 +24,7 @@
         <div class="col-xxl-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Create Offer</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Create Notification</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
 
@@ -29,55 +34,38 @@
                         <div class="live-preview">
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Service Name</label>
+                                    <label for="employeeName" class="form-label">Notification Title</label>
                                     <input type="text" class="form-control" id="employeeName"
                                         placeholder="Enter offer name" name="name">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="employeeUrl" class="form-label">Service Description</label>
+                                    <label for="employeeUrl" class="form-label">Notifiacyion Description</label>
                                     <input type="text" class="form-control" id="description"
                                         placeholder="Enter offer description" name="description">
                                 </div>
 
-                                <div class="mb-3">
-                                    <label for="StartleaveDate" class="form-label">From</label>
-                                    <input type="number" class="form-control" data-provider="flatpickr"
-                                        id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
-                                </div>
-
-                                
-                                <div class="mb-3">
-                                    <label for="StartleaveDate" class="form-label">From</label>
-                                    <input type="number" class="form-control" data-provider="flatpickr"
-                                        id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
+                                <div class="col-lg-12">
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected="">Select users </option>
+                                        <option value="1">Amer Dawood</option>
+                                        <option value="2">Ahmad Ali</option>
+                                        <option value="3">Billal</option>
+                                    </select>
                                 </div>
 
 
 
                                 <div class="mb-3">
-                                    <label for="image_url" class="form-label">Select Image</label>
+                                    <label for="image_url" class="form-label">Select Image *</label>
                                     <div class="input-group">
                                         <input type="file" class="form-control" id="image_url" name="image_url">
                                         <label class="input-group-text" for="image_url">Upload</label>
                                     </div>
                                 </div>
 
-                                <div class="form-check form-switch form-switch-lg" dir="ltr">
-                                    <input type="hidden" name="is_available" value="0"> <!-- Hidden input for unchecked value -->
-                                    <input type="checkbox" class="form-check-input" id="customSwitchsizelg" name="is_available" value="1">
-                                    <label class="form-check-label" for="customSwitchsizelg">Is Available</label>
-                                </div>
-
-
-
-
-
-
-
-
 
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Offer</button>
+                                    <button type="submit" class="btn btn-primary">Create Notification</button>
                                 </div>
                             </form>
                         </div>

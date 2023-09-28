@@ -46,10 +46,10 @@
     <div class="collapse menu-dropdown" id="sidebarSlider">
         <ul class="nav nav-sm flex-column">
             <li class="nav-item">
-                <a href="{{ route('offers.index') }}" class="nav-link" data-key="t-one-page">{{ __('site.all_slider') }}</a>
+                <a href="{{ route('sliders.index') }}" class="nav-link" data-key="t-one-page">{{ __('site.all_slider') }}</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('offers.create') }}" class="nav-link" data-key="t-nft-landing">{{ __('site.add_slider') }}</a>
+                <a href="{{ route('sliders.create') }}" class="nav-link" data-key="t-nft-landing">{{ __('site.add_slider') }}</a>
             </li>
         </ul>
     </div>
@@ -68,6 +68,25 @@
 
             <li class="nav-item">
                 <a href="{{ route('services.create') }}" class="nav-link" data-key="t-nft-landing"> {{ __('site.add_services') }} </a>
+            </li>
+
+        </ul>
+    </div>
+</li>
+
+
+<li class="nav-item">
+    <a class="nav-link menu-link" href="#sidebarSections" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarSections">
+        <i class="ri-rocket-line"></i> <span data-key="t-landing">Sections</span>
+    </a>
+    <div class="collapse menu-dropdown" id="sidebarSections">
+        <ul class="nav nav-sm flex-column">
+            <li class="nav-item">
+                <a href="{{ route('sections.index') }}" class="nav-link" data-key="t-one-page"> All Sections </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('sections.create') }}" class="nav-link" data-key="t-nft-landing">Add Sections </a>
             </li>
 
         </ul>
@@ -97,23 +116,114 @@
 
 <li class="nav-item">
     <a class="nav-link menu-link" href="#sidebarBooking" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarBooking">
-        <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">{{ __('site.users') }}</span>
+        <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">All Users</span>
     </a>
     <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarBooking">
         <div class="row">
             <div class="col-lg-4">
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
-                        <a href="{{ route('users.index') }}" class="nav-link" data-key="t-alerts">{{ __('site.all_users') }}</a>
+                        <a href="{{ route('users.index') }}" class="nav-link" data-key="t-alerts">All Users</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('users.create') }}" class="nav-link" data-key="t-badges">{{ __('site.add_users') }}</a>
+                        <a href="{{ route('users.create') }}" class="nav-link" data-key="t-badges">Add User</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </li>
+<li class="nav-item">
+    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="settings">
+        <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">{{ __('site.settings') }}</span>
+    </a>
+    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
+        <div class="row">
+            <div class="col-lg-4">
+                <ul class="nav nav-sm flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="#sidebarLanguage" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLanguage">
+                            <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">{{ __('site.language') }}</span>
+                        </a>
+                        <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarLanguage">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-key="t-alerts">{{ __('site.app_language') }}</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link" data-key="t-badges">{{ __('site.all_language') }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="#sidebarFaqs" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarFaqs">
+                            <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">FAQs</span>
+                        </a>
+                        <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarFaqs">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="{{ route('faqs.index') }}" class="nav-link" data-key="t-alerts">All FAQs</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('faqs.create') }}" class="nav-link" data-key="t-badges">Add FAQs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('privacy.index') }}" class="nav-link" data-key="t-alerts">{{ __('site.privacy') }}</a>
+                    </li>
+                    <a href="">
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
+
+
+                                    <i class="mdi mdi-sticker-text-outline"></i> <span data-key="t-pages">{{ __('site.app_theme') }}</span>
+
+
+                            </a>
+
+                        </li>
+
+                        </a>
+
+
+
+                    <li class="nav-item">
+                        <a href="" class="nav-link" data-key="t-badges">{{ __('site.app_settings') }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+<a href="">
+    <li class="nav-item">
+        <a class="nav-link menu-link" href="{{ route('chat.index') }}" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
+
+
+                <i class="mdi mdi-sticker-text-outline"></i> <span data-key="t-pages">Chat</span>
+
+
+        </a>
+
+    </li>
+
+    </a>
+
 
 
 <li class="nav-item">
@@ -145,7 +255,7 @@
             <div class="col-lg-4">
                 <ul class="nav nav-sm flex-column">
                     <li class="nav-item">
-                        <a href="{{ route('admin.index') }}" class="nav-link" data-key="t-alerts">{{ __('site.all_admins') }}</a>
+                        <a href="{{ route('admin.all') }}" class="nav-link" data-key="t-alerts">{{ __('site.all_admins') }}</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.create') }}" class="nav-link" data-key="t-badges">{{ __('site.add_admins') }}</a>
@@ -158,19 +268,7 @@
 
 
 
-<a href="">
-    <li class="nav-item">
-        <a class="nav-link menu-link" href="" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
 
-
-                <i class="mdi mdi-sticker-text-outline"></i> <span data-key="t-pages">{{ __('site.app_theme') }}</span>
-
-
-        </a>
-
-    </li>
-
-    </a>
     <li class="nav-item">
         <a class="nav-link menu-link" href="#sidebarNotifications" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarNotifications">
             <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">{{ __('site.notification') }}</span>
@@ -180,7 +278,7 @@
                 <div class="col-lg-4">
                     <ul class="nav nav-sm flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-key="t-badges">{{ __('site.send_notification') }}</a>
+                            <a href="{{ route('notification.create') }}" class="nav-link" data-key="t-badges">{{ __('site.send_notification') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -188,25 +286,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link menu-link" href="#sidebarLanguage" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLanguage">
-            <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">{{ __('site.language') }}</span>
-        </a>
-        <div class="collapse menu-dropdown mega-dropdown-menu" id="sidebarLanguage">
-            <div class="row">
-                <div class="col-lg-4">
-                    <ul class="nav nav-sm flex-column">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-key="t-alerts">{{ __('site.app_language') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-key="t-badges">{{ __('site.all_language') }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </li>
+
 
     <li class="nav-item">
         <a class="nav-link menu-link" href="#sidebarTravels" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTravels">
@@ -217,10 +297,10 @@
                 <div class="col-lg-4">
                     <ul class="nav nav-sm flex-column">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-key="t-alerts">{{ __('site.all_travels') }}</a>
+                            <a href="{{ route('travels.index') }}" class="nav-link" data-key="t-alerts">{{ __('site.all_travels') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" data-key="t-badges">{{ __('site.add_travels') }}</a>
+                            <a href="{{ route('travels.create') }}" class="nav-link" data-key="t-badges">{{ __('site.add_travels') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -233,27 +313,4 @@
 
 
 
-<li class="nav-item">
-    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="settings">
-        <i class="mdi mdi-cube-outline"></i> <span data-key="t-base-ui">{{ __('site.settings') }}</span>
-    </a>
-    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
-        <div class="row">
-            <div class="col-lg-4">
-                <ul class="nav nav-sm flex-column">
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-key="t-alerts">{{ __('site.privacy') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-key="t-badges">{{ __('site.faqs') }}</a>
-                    </li>
 
-
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-key="t-badges">{{ __('site.app_settings') }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</li>

@@ -16,13 +16,13 @@ class AdminController extends Controller
 
     public function allAdmins()
     {
-        return view('dashboard.index');
+        return view('dashboard.admins.index');
     }
 
 
     public function createAdmin()
     {
-        return view('dashboard.index');
+        return view('dashboard.admins.create');
     }
 
 }

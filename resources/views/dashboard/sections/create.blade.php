@@ -29,29 +29,10 @@
                         <div class="live-preview">
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Service Name</label>
+                                    <label for="employeeName" class="form-label">Section Name</label>
                                     <input type="text" class="form-control" id="employeeName"
                                         placeholder="Enter offer name" name="name">
                                 </div>
-                                <div class="mb-3">
-                                    <label for="employeeUrl" class="form-label">Service Description</label>
-                                    <input type="text" class="form-control" id="description"
-                                        placeholder="Enter offer description" name="description">
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="StartleaveDate" class="form-label">From</label>
-                                    <input type="number" class="form-control" data-provider="flatpickr"
-                                        id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
-                                </div>
-
-                                
-                                <div class="mb-3">
-                                    <label for="StartleaveDate" class="form-label">From</label>
-                                    <input type="number" class="form-control" data-provider="flatpickr"
-                                        id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
-                                </div>
-
 
 
                                 <div class="mb-3">
@@ -67,17 +48,8 @@
                                     <input type="checkbox" class="form-check-input" id="customSwitchsizelg" name="is_available" value="1">
                                     <label class="form-check-label" for="customSwitchsizelg">Is Available</label>
                                 </div>
-
-
-
-
-
-
-
-
-
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Offer</button>
+                                    <button type="submit" class="btn btn-primary">Add Section</button>
                                 </div>
                             </form>
                         </div>

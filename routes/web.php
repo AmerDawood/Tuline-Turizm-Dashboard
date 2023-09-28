@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\TravelsController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -26,7 +28,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::middleware('auth')->group(function(){
 
 Route::prefix(LaravelLocalization::setLocale())->group(function() {
 
@@ -68,7 +70,19 @@ Route::resource('languages',AppLanguageController::class);
 Route::resource('theme',AppThemeController::class);
 
 
-
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 });
+
+
+});
+
+
+// Auth
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+

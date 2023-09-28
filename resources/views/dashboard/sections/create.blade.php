@@ -19,7 +19,7 @@
         <div class="col-xxl-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Create Offer</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Create Section</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
 
@@ -49,7 +49,7 @@
                                     <label class="form-check-label" for="customSwitchsizelg">Is Available</label>
                                 </div>
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Section</button>
+                                    <button type="submit" class="btn btn-primary">Create Section</button>
                                 </div>
                             </form>
                         </div>

@@ -19,7 +19,7 @@
         <div class="col-xxl-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Create Offer</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Create Travel</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
 
@@ -29,12 +29,12 @@
                         <div class="live-preview">
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Service Name</label>
+                                    <label for="employeeName" class="form-label">Travel Name</label>
                                     <input type="text" class="form-control" id="employeeName"
                                         placeholder="Enter offer name" name="name">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="employeeUrl" class="form-label">Service Description</label>
+                                    <label for="employeeUrl" class="form-label">Travel Description</label>
                                     <input type="text" class="form-control" id="description"
                                         placeholder="Enter offer description" name="description">
                                 </div>
@@ -45,9 +45,9 @@
                                         id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
                                 </div>
 
-                                
+
                                 <div class="mb-3">
-                                    <label for="StartleaveDate" class="form-label">From</label>
+                                    <label for="StartleaveDate" class="form-label">To</label>
                                     <input type="number" class="form-control" data-provider="flatpickr"
                                         id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
                                 </div>
@@ -68,16 +68,8 @@
                                     <label class="form-check-label" for="customSwitchsizelg">Is Available</label>
                                 </div>
 
-
-
-
-
-
-
-
-
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Offer</button>
+                                    <button type="submit" class="btn btn-primary">Add Travel</button>
                                 </div>
                             </form>
                         </div>

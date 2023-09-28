@@ -19,7 +19,7 @@
         <div class="col-xxl-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Create Offer</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Create Service</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
 
@@ -45,7 +45,7 @@
                                         id="StartleaveDate" name="capacity" placeholder="Enter capacity for the offer" step="1">
                                 </div>
 
-                                
+
                                 <div class="mb-3">
                                     <label for="StartleaveDate" class="form-label">From</label>
                                     <input type="number" class="form-control" data-provider="flatpickr"
@@ -77,7 +77,7 @@
 
 
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Offer</button>
+                                    <button type="submit" class="btn btn-primary">Add Services</button>
                                 </div>
                             </form>
                         </div>

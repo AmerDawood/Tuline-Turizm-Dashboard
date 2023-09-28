@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AppLanguageController;
+use App\Http\Controllers\Admin\AppThemeController;
 use App\Http\Controllers\Admin\AreasController;
 use App\Http\Controllers\Admin\ChatController;
 use App\Http\Controllers\Admin\NotificationsController;
@@ -60,6 +62,11 @@ Route::get('notification/create',[NotificationsController::class,'create'])->nam
 
 
 Route::resource('chat',ChatController::class);
+Route::resource('languages',AppLanguageController::class);
+
+
+Route::resource('theme',AppThemeController::class);
+
 
 
 

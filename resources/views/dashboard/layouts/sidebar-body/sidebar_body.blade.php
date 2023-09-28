@@ -150,11 +150,12 @@
                                 <div class="col-lg-4">
                                     <ul class="nav nav-sm flex-column">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link" data-key="t-alerts">{{ __('site.app_language') }}</a>
+                                            <a href="{{ route('languages.index') }}" class="nav-link" data-key="t-badges">All Language</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link" data-key="t-badges">{{ __('site.all_language') }}</a>
+                                            <a href="{{ route('languages.create') }}" class="nav-link" data-key="t-alerts">Add Language</a>
                                         </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -186,19 +187,14 @@
                     </li>
                     <a href="">
                         <li class="nav-item">
-                            <a class="nav-link menu-link" href="" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
-
+                            <a class="nav-link menu-link" href="{{ route('theme.index') }}" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
 
                                     <i class="mdi mdi-sticker-text-outline"></i> <span data-key="t-pages">{{ __('site.app_theme') }}</span>
-
-
                             </a>
 
                         </li>
 
                         </a>
-
-
 
                     <li class="nav-item">
                         <a href="" class="nav-link" data-key="t-badges">{{ __('site.app_settings') }}</a>

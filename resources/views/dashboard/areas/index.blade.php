@@ -14,7 +14,9 @@
                     <div class="card-header align-items-center d-flex">
                         <h4 class="card-title mb-0 flex-grow-1">All Areas</h4>
                         <div class="flex-shrink-0">
+                            <a href="{{ route('areas.create') }}" class="btn btn-primary">Create Area</a>
                         </div>
+
                     </div><!-- end card header -->
 
                     <div class="card-body">
@@ -27,6 +29,7 @@
                                             <th scope="col">ID</th>
                                             <th scope="col">Title</th>
                                             <th scope="col">Description</th>
+                                            <th scope="col">Created At</th>
                                             <th scope="col">Actions</th>
 
                                         </tr>
@@ -35,24 +38,26 @@
 
 
 
-                                        {{-- @foreach ($places as  $place)
+                                     @foreach ($areas as  $area)
 
                                         <tr>
-                                            <td class="fw-medium">{{ $place->id }}</td>
-                                            <td>{{ $place->name }}</td>
-                                            <td>{{ $place->city }}</td>
+                                            <td class="fw-medium">{{ $area->id }}</td>
+                                            <td>{{ $area->title }}</td>
+                                            <td>{{ $area->description }}</td>
 
-                                            <td>{{ $place->created_at }}</td>
-                                            <td><span class="badge badge-soft-success">{{ $place->state }}</span></td>
-
-
+                                            <td>{{ $area->created_at->diffForHumans()  }}</td>
 
                                             <td>
-                                                <a href="{{ route('places.edit', $place->id) }}" class="btn btn-primary btn-sm">
+                                              <a href="{{ route('areas.edit', $area->id) }}" class="btn btn-primary btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
 
-                                                <form action="{{ route('places.destroy', $place->id) }}" method="POST" style="display: inline-block;">
+                                                <a href="" class="btn btn-success btn-sm">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+
+
+                                                <form action="{{ route('areas.destroy', $area->id) }}" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm btn-delete">
@@ -62,13 +67,13 @@
                                             </td>
 
                                         </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </tbody>
 
                                 </table>
                                 <div style="padding: 20px">
-                                    {{-- {{ $places->links() }} --}}
+                                    {{ $areas->links() }}
 
                                     </div>
                             </div>

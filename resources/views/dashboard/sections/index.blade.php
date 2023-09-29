@@ -7,19 +7,19 @@
     <div class="container-fluid">
         <div class="row">
 
-            {{-- @foreach ($spaces as $space) --}}
 
+            @foreach ($sections as $section)
 
             <div class="col-sm-6 col-xl-4" >
                 <!-- Simple card -->
                 <div class="card">
-                    <img class="card-img-top img-fluid" src="https://placehold.co/600x400" alt="Card image cap" style="height: 250px;">
+                    <img class="card-img-top img-fluid" src="{{ asset('uploads/sections/'.$section->image) }}" alt="Card image cap" style="height: 150px;">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">A day in the of a professional fashion designer</h4>
+                        <h4 class="card-title mb-0">{{ $section->name }}</h4>
                     </div>
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                         <p class="card-text text-muted"> Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.</p>
-                    </div>
+                    </div> --}}
 
                     <div class="card-footer">
                         <div class="row">
@@ -32,16 +32,23 @@
                             </div>
                             <div class="col-2">
                                 <p class="card-text mb-0">
-                                    <button class="btn btn-danger">
+
+
+                                <form action="{{ route('sections.destroy', $section->id) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                    <button class="btn btn-danger btn-delete">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
+
+                                </form>
                                 </p>
                             </div>
                             <div class="col-2">
                                 <p class="card-text mb-0">
-                                    <button class="btn btn-primary">
+                                    <a href="{{ route('sections.edit',$section->id) }}" class="btn btn-primary">
                                         <i class="fas fa-edit"></i>
-                                    </button>
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -51,10 +58,9 @@
 
                 </div>
             </div>
-
-            {{-- @endforeach --}}
+ @endforeach
                               <div style="padding: 20px">
-                                {{-- {{ $spaces->links() }} --}}
+                                {{ $sections->links() }}
 
                                 </div>
 

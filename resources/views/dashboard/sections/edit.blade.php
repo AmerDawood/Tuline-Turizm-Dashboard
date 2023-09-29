@@ -23,13 +23,14 @@
                 </div><!-- end card header -->
                 <div class="card-body">
 
-                    <form action="{{ route('sections.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('sections.update',$section->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
                         <div class="live-preview">
                             <form action="">
                                 @include('dashboard.sections._form')
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Create Section</button>
+                                    <button type="submit" class="btn btn-primary">Update Section</button>
                                 </div>
                             </form>
                         </div>

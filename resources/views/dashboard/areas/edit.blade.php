@@ -33,12 +33,13 @@ crossorigin=""/>
                     </div><!-- end card header -->
                     <div class="card-body">
                         <div class="live-preview">
-                            <form action="{{ route('areas.store') }}" class="row g-3" method="POST">
+                            <form action="{{ route('areas.update',$area->id) }}" class="row g-3" method="POST">
                                 @csrf
+                                @method('PUT')
                                  @include('dashboard.areas._form')
                                 <div class="col-12">
                                     <div class="text-end">
-                                        <button type="submit" class="btn btn-primary">Create Area</button>
+                                        <button type="submit" class="btn btn-primary">Update Area</button>
                                     </div>
                                 </div>
                             </form>

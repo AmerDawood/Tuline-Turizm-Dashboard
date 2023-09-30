@@ -67,6 +67,69 @@ class SliderController extends Controller
         return redirect()->route('sliders.index')->with('msg', 'Slider Created Successfully');
     }
 
+    public function edit($id)
+    {
+        $slider = Slider::findOrFail($id);
+        $sections = Section::orderByDesc('id')->get();
+        $areas = Area::orderByDesc('id')->get();
+        return view('dashboard.slider.edit',[
+            'slider' => $slider,
+            'sections' =>$sections,
+            'areas' =>$areas,
+        ]);
+    }
+
+
+
+    public function update(Request $request, $id)
+{
+    // Validate the incoming request data
+    $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'section_id' => 'required',
+        'area_id' => 'required',
+        'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust image validation as needed
+        'status' => 'nullable',
+        'price' => 'nullable',
+    ]);
+
+    // Find the Slider by its ID
+    $slider = Slider::find($id);
+
+    // Check if the Slider exists
+    if (!$slider) {
+        return redirect()->route('sliders.index')->with('error', 'Slider not found.');
+    }
+
+    // Handle image upload if a new image is provided
+    if ($request->hasFile('image')) {
+        // Delete the old image using the Storage facade
+        Storage::disk('public')->delete('uploads/sliders/' . $slider->image);
+
+        // Upload the new image
+        $img_name = rand() . time() . '.' . $request->file('image')->getClientOriginalExtension();
+        $request->file('image')->storeAs('uploads/sliders', $img_name, 'public');
+
+        // Update the image field in the database
+        $slider->image = $img_name;
+    }
+
+    // Determine the status based on the checkbox value
+    $status = $request->has('status') ? 'available' : 'notavailable';
+
+    // Update the Slider with the provided data
+    $slider->name = $request->name;
+    $slider->description = $request->description;
+    $slider->section_id = $request->section_id;
+    $slider->area_id = $request->area_id;
+    $slider->status = $status;
+    $slider->price = $request->price;
+
+    $slider->save();
+
+    return redirect()->route('sliders.index')->with('msg', 'Slider Updated Successfully');
+}
 
 
 
@@ -84,5 +147,5 @@ class SliderController extends Controller
         return redirect()->route('sliders.index')->with('msg', 'Slider Deleted Successfully');
     }
 
-    
+
 }

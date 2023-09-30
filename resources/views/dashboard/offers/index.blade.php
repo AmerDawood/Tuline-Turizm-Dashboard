@@ -23,13 +23,13 @@
 
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col-2">
+                            {{-- <div class="col-2">
                                 <p class="card-text mb-0">
                                     <a href="#" class="btn btn-success">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                 </p>
-                            </div>
+                            </div> --}}
                             <div class="col-2">
                                 <p class="card-text mb-0">
 
@@ -46,11 +46,12 @@
                             </div>
                             <div class="col-2">
                                 <p class="card-text mb-0">
-                                    <button class="btn btn-primary">
+                                    <a href="{{ route('offers.edit',$offer->id) }}" class="btn btn-primary">
                                         <i class="fas fa-edit"></i>
-                                    </button>
+                                    </a>
                                 </p>
                             </div>
+
                         </div>
                     </div>
 

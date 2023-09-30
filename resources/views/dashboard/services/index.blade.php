@@ -22,18 +22,12 @@
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col-2">
-                                <p class="card-text mb-0">
-                                    <a href="#" class="btn btn-success">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
-                                </p>
-                            </div>
+
                             <div class="col-2">
                                 <p class="card-text mb-0">
 
 
-                                <form action="" method="POST" style="display: inline-block;">
+                                <form action="{{ route('services.destroy',$service->id) }}" method="POST" style="display: inline-block;">
                                         @csrf
                                         @method('DELETE')
                                     <button class="btn btn-danger btn-delete">
@@ -45,11 +39,12 @@
                             </div>
                             <div class="col-2">
                                 <p class="card-text mb-0">
-                                    <button class="btn btn-primary">
+                                    <a href="{{ route('services.edit',$service->id) }}" class="btn btn-primary">
                                         <i class="fas fa-edit"></i>
-                                    </button>
+                                    </a>
                                 </p>
                             </div>
+
                         </div>
                     </div>
 

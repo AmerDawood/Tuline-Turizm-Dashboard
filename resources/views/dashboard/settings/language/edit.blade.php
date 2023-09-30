@@ -19,20 +19,22 @@
         <div class="col-xxl-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">Add Language</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Update Language</h4>
                 </div><!-- end card header -->
                 <div class="card-body">
 
-                    <form action="{{ route('languages.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('languages.update',$language->id) }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
+                        @method('PUT')
                         <div class="live-preview">
 
                             @include('dashboard.settings.language._form')
 
 
+
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Language</button>
+                                    <button type="submit" class="btn btn-primary">Update Language</button>
                                 </div>
 
                         </div>

@@ -18,7 +18,11 @@ class AppLanguageController extends Controller
 
     public function create()
     {
-        return view('dashboard.settings.language.create');
+        $language = new AppLanguage();
+        return view('dashboard.settings.language.create',
+     [
+        'language' =>$language,
+     ]);
     }
 
 
@@ -38,4 +42,52 @@ class AppLanguageController extends Controller
 
         return redirect()->route('languages.index')->with('msg','Language Created Successfully');
     }
+
+    public function edit($id)
+{
+    $language = AppLanguage::find($id);
+
+    if (!$language) {
+        return redirect()->route('languages.index')->with('error', 'Language not found.');
+    }
+
+    return view('dashboard.settings.language.index', compact('language'));
+}
+
+public function update(Request $request, $id)
+{
+    $language = AppLanguage::find($id);
+
+    if (!$language) {
+        return redirect()->route('languages.index')->with('error', 'Language not found.');
+    }
+
+    $request->validate([
+        'title' => 'required|string',
+        'abbreviation' => 'required|string',
+    ]);
+
+    $language->update([
+        'title' => $request->title,
+        'abbreviation' => $request->abbreviation,
+    ]);
+
+    return redirect()->route('languages.index')->with('msg', 'Language Updated Successfully');
+}
+
+
+public function destroy($id)
+{
+    $language = AppLanguage::find($id);
+
+    if (!$language) {
+        return redirect()->route('languages.index')->with('error', 'Language not found.');
+    }
+
+    $language->delete();
+
+    return redirect()->route('languages.index')->with('msg', 'Language Deleted Successfully');
+}
+
+
 }

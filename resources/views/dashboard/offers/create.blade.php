@@ -25,67 +25,7 @@
 
                     <form action="{{ route('offers.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="live-preview">
-                            <form action="">
-                                <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Offer Name</label>
-                                    <input type="text" class="form-control" id="employeeName"
-                                        placeholder="Enter offer name" name="name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="employeeUrl" class="form-label">Offer Description</label>
-                                    <input type="text" class="form-control" id="description"
-                                        placeholder="Enter offer description" name="description">
-                                </div>
-
-
-                                <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Offer Price</label>
-                                    <input type="text" class="form-control" id="employeeName"
-                                        placeholder="Enter offer price" name="price">
-                                </div>
-
-
-                                <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Offer Days Number</label>
-                                    <input type="text" class="form-control" id="employeeName"
-                                        placeholder="Enter offer days number" name="days_number">
-                                </div>
-
-                        <div class="mb-3">
-                            <label for="offerName" class="form-label">Section Name</label>
-                            <select class="form-select" id="offerName" name="section_id">
-                                <option value="" disabled selected>Select an section</option>
-                                @foreach ($sections as $section)
-                                    <option value="{{ $section->id }}">{{ $section->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="offerName" class="form-label">Area Name</label>
-                            <select class="form-select" id="offerName" name="area_id">
-                                <option value="" disabled selected>Select an area</option>
-                                @foreach ($areas as $area)
-                                    <option value="{{ $section->id }}">{{ $area->title }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-
-
-                                <div class="mb-3">
-                                    <label for="image_url" class="form-label">Select Image</label>
-                                    <div class="input-group">
-                                        <input type="file" class="form-control" id="image" name="image">
-                                        <label class="input-group-text" for="image_url">Upload</label>
-                                    </div>
-                                </div>
-
-                                <div class="form-check form-switch form-switch-lg" dir="ltr">
-                                    <input type="hidden" name="is_available" value="0"> <!-- Hidden input for unchecked value -->
-                                    <input type="checkbox" class="form-check-input" id="customSwitchsizelg" name="is_available" value="1">
-                                    <label class="form-check-label" for="customSwitchsizelg">Is Available</label>
-                                </div>
+                         @include('dashboard.offers._form')
 
                                 <div class="text-end">
                                     <button type="submit" class="btn btn-primary">Add Offer</button>

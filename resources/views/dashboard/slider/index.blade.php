@@ -20,30 +20,31 @@
                     <div class="card-body">
                         <p class="card-text text-muted">{{ $slider->description }}</p>
                     </div>
-
                     <div class="card-footer">
                         <div class="row">
+
                             <div class="col-2">
                                 <p class="card-text mb-0">
-                                    <a href="#" class="btn btn-success">
-                                        <i class="fas fa-eye"></i>
+
+
+                                <form action="{{ route('sliders.destroy',$slider->id) }}" method="POST" style="display: inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                    <button class="btn btn-danger btn-delete">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+
+                                </form>
+                                </p>
+                            </div>
+                            <div class="col-2">
+                                <p class="card-text mb-0">
+                                    <a href="{{ route('sliders.edit',$slider->id) }}" class="btn btn-primary">
+                                        <i class="fas fa-edit"></i>
                                     </a>
                                 </p>
                             </div>
-                            <div class="col-2">
-                                <p class="card-text mb-0">
-                                    <button class="btn btn-danger">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                </p>
-                            </div>
-                            <div class="col-2">
-                                <p class="card-text mb-0">
-                                    <button class="btn btn-primary">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                </p>
-                            </div>
+
                         </div>
                     </div>
 

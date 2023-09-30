@@ -22,13 +22,14 @@
             <div class="col-xxl-12">
                 <div class="card">
                     <div class="card-header align-items-center d-flex">
-                        <h4 class="card-title mb-0 flex-grow-1">Create User</h4>
+                        <h4 class="card-title mb-0 flex-grow-1">Update User</h4>
 
                     </div><!-- end card header -->
                     <div class="card-body">
                         <div class="live-preview">
-                            <form action="{{ route('users.store') }}" class="row g-3" method="POST">
+                            <form action="{{ route('users.update',$user->id) }}" class="row g-3" method="POST">
                                 @csrf
+                                @method('PUT')
 
                                 <div class="col-md-12">
                                     <label for="fullnameInput" class="form-label">Name</label>
@@ -57,19 +58,12 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <label for="inputPassword4" class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="inputPassword4" class="form-label">Confirmation Password</label>
-                                        <input type="password" name="password_confirmation" class="form-control" id="inputPassword4" placeholder="Password Confirmation" >
-                                    </div>
+                                 
 
 
                                 <div class="col-12">
                                     <div class="text-end">
-                                        <button type="submit" class="btn btn-primary">Create User</button>
+                                        <button type="submit" class="btn btn-primary">Update User</button>
                                     </div>
                                 </div>
 

@@ -83,6 +83,10 @@ Route::post('/deleteevent',[CalenderController::class,'deleteEvent'])->name('del
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
+// Route::post('/store-user', [UserController::class, 'store'])->name('user.store');
+// Route::get('/update-user/{id}', [UserController::class, 'edit'])->name('user.edit');
+// Route::put('/users/{id}', [UserController::class,'update'])->name('users.update');
+// Route::delete('/users/{id}', [UserController::class,'destroy'])->name('users.destroy');
 
 
 

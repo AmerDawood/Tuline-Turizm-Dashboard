@@ -43,11 +43,11 @@
                                             <td>{{ $language->created_at->diffForHumans() }}</td>
 
                                             <td>
-                                                <a href="" class="btn btn-primary btn-sm">
+                                                {{-- <a href="{{ route('languages.edit',$language->id) }}" class="btn btn-primary btn-sm">
                                                     <i class="fas fa-edit"></i>
-                                                </a>
+                                                </a> --}}
 
-                                                <form action="" method="POST" style="display: inline-block;">
+                                                <form action="{{ route('languages.destroy',$language->id) }}" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm btn-delete">

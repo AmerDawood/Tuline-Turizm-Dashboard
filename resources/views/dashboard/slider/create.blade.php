@@ -23,29 +23,51 @@
                 </div><!-- end card header -->
                 <div class="card-body">
 
-                    <form action="" method="POST" enctype="multipart/form-data">
-
+                    <form action="{{ route('sliders.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="live-preview">
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Offer Name</label>
+                                    <label for="employeeName" class="form-label">Slider Name</label>
                                     <input type="text" class="form-control" id="employeeName"
                                         placeholder="Enter offer name" name="name">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="employeeUrl" class="form-label">Offer Description</label>
+                                    <label for="employeeUrl" class="form-label">Slider Description</label>
                                     <input type="text" class="form-control" id="description"
                                         placeholder="Enter offer description" name="description">
                                 </div>
 
-                               
+                                <div class="mb-3">
+                                    <label for="employeeUrl" class="form-label">Price</label>
+                                    <input type="text" class="form-control" id="price"
+                                        placeholder="Enter price" name="price">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="offerName" class="form-label">Section Name</label>
+                                    <select class="form-select" id="offerName" name="section_id">
+                                        <option value="" disabled selected>Select an section</option>
+                                        @foreach ($sections as $section)
+                                            <option value="{{ $section->id }}">{{ $section->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="offerName" class="form-label">Area Name</label>
+                                    <select class="form-select" id="offerName" name="area_id">
+                                        <option value="" disabled selected>Select an area</option>
+                                        @foreach ($areas as $area)
+                                            <option value="{{ $section->id }}">{{ $area->title }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 <div class="mb-3">
                                     <label for="image_url" class="form-label">Select Image</label>
                                     <div class="input-group">
-                                        <input type="file" class="form-control" id="image_url" name="image_url">
-                                        <label class="input-group-text" for="image_url">Upload</label>
+                                        <input type="file" class="form-control" id="image" name="image">
+                                        <label class="input-group-text" for="image">Upload</label>
                                     </div>
                                 </div>
 
@@ -64,7 +86,7 @@
 
 
                                 <div class="text-end">
-                                    <button type="submit" class="btn btn-primary">Add Offer</button>
+                                    <button type="submit" class="btn btn-primary">Add Slider</button>
                                 </div>
                             </form>
                         </div>

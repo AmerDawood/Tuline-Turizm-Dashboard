@@ -23,20 +23,20 @@
                 </div><!-- end card header -->
                 <div class="card-body">
 
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('faqs.store') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
                         <div class="live-preview">
                             <form action="">
                                 <div class="mb-3">
-                                    <label for="employeeName" class="form-label">Title</label>
+                                    <label for="employeeName" class="form-label">Question</label>
                                     <input type="text" class="form-control" id="employeeName"
-                                        placeholder="Enter offer name" name="name">
+                                        placeholder="Enter Question" name="question">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="employeeUrl" class="form-label">Description</label>
+                                    <label for="employeeUrl" class="form-label">Answer</label>
                                     <input type="text" class="form-control" id="description"
-                                        placeholder="Enter offer description" name="description">
+                                        placeholder="Enter Answer" name="answer">
                                 </div>
 
 

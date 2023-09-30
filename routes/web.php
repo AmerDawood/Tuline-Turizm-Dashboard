@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppLanguageController;
 use App\Http\Controllers\Admin\AppThemeController;
 use App\Http\Controllers\Admin\AreasController;
+use App\Http\Controllers\Admin\CalenderController;
 use App\Http\Controllers\Admin\ChatController;
 use App\Http\Controllers\Admin\NotificationsController;
 use App\Http\Controllers\Admin\OffersController;
@@ -52,10 +53,14 @@ Route::resource('sections',SectionsController::class);
 Route::resource('travels',TravelsController::class);
 Route::get('privacy/index',[SettingsController::class,'privacy'])->name('privacy.index');
 Route::get('privacy/update',[SettingsController::class,'updatePrivacy'])->name('privacy.update');
+Route::put('privacy/update',[SettingsController::class,'updateData'])->name('privacy.update');
+
 
 
 Route::get('faqs/index',[SettingsController::class,'faqs'])->name('faqs.index');
 Route::get('faqs/create',[SettingsController::class,'createFaqs'])->name('faqs.create');
+Route::post('faqs/store',[SettingsController::class,'storeFaqs'])->name('faqs.store');
+
 
 
 
@@ -70,7 +75,15 @@ Route::resource('languages',AppLanguageController::class);
 Route::resource('theme',AppThemeController::class);
 
 
+Route::get('/getevent', [CalenderController::class,'getEvent'])->name('getevent');
+Route::post('/createevent',[CalenderController::class,'createEvent'])->name('createevent');
+Route::post('/deleteevent',[CalenderController::class,'deleteEvent'])->name('deleteevent');
+
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+
 
 
 });

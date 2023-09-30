@@ -33,24 +33,21 @@
                                     </thead>
                                     <tbody>
 
-                                        {{-- @foreach ($places as  $place)
+                                     @foreach ($languages as  $language)
 
                                         <tr>
-                                            <td class="fw-medium">{{ $place->id }}</td>
-                                            <td>{{ $place->name }}</td>
-                                            <td>{{ $place->city }}</td>
+                                            <td class="fw-medium">{{ $language->id }}</td>
+                                            <td>{{ $language->title }}</td>
+                                            <td>{{ $language->abbreviation }}</td>
 
-                                            <td>{{ $place->created_at }}</td>
-                                            <td><span class="badge badge-soft-success">{{ $place->state }}</span></td>
-
-
+                                            <td>{{ $language->created_at->diffForHumans() }}</td>
 
                                             <td>
-                                                <a href="{{ route('places.edit', $place->id) }}" class="btn btn-primary btn-sm">
+                                                <a href="" class="btn btn-primary btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
 
-                                                <form action="{{ route('places.destroy', $place->id) }}" method="POST" style="display: inline-block;">
+                                                <form action="" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm btn-delete">
@@ -60,15 +57,12 @@
                                             </td>
 
                                         </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </tbody>
 
                                 </table>
-                                <div style="padding: 20px">
-                                    {{-- {{ $places->links() }} --}}
 
-                                    </div>
                             </div>
 
                     </div><!-- end card-body -->

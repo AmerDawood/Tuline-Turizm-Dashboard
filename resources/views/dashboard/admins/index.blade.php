@@ -27,8 +27,9 @@
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Phone Number</th>
                                             <th scope="col">Status</th>
+
+                                            <th scope="col">Created At</th>
                                             <th scope="col">Actions</th>
 
                                         </tr>
@@ -37,24 +38,22 @@
 
 
 
-                                        {{-- @foreach ($places as  $place)
+                               @foreach ($admins as  $admin)
 
                                         <tr>
-                                            <td class="fw-medium">{{ $place->id }}</td>
-                                            <td>{{ $place->name }}</td>
-                                            <td>{{ $place->city }}</td>
-
-                                            <td>{{ $place->created_at }}</td>
-                                            <td><span class="badge badge-soft-success">{{ $place->state }}</span></td>
+                                            <td class="fw-medium">{{ $admin->id }}</td>
+                                            <td>{{ $admin->name }}</td>
+                                            <td>{{ $admin->email }}</td>
+                                            <td>{{ $admin->status }}</td>
 
 
-
+                                            <td>{{ $admin->created_at->diffForHumans() }}</td>
                                             <td>
-                                                <a href="{{ route('places.edit', $place->id) }}" class="btn btn-primary btn-sm">
+                                                <a href="" class="btn btn-primary btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
 
-                                                <form action="{{ route('places.destroy', $place->id) }}" method="POST" style="display: inline-block;">
+                                                <form action="" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm btn-delete">
@@ -64,13 +63,13 @@
                                             </td>
 
                                         </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </tbody>
 
                                 </table>
                                 <div style="padding: 20px">
-                                    {{-- {{ $places->links() }} --}}
+                                    {{ $admins->links() }}
 
                                     </div>
                             </div>

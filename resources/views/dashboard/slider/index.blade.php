@@ -7,18 +7,18 @@
     <div class="container-fluid">
         <div class="row">
 
-            {{-- @foreach ($spaces as $space) --}}
+            @foreach ($sliders as $slider)
 
 
             <div class="col-sm-6 col-xl-4" >
                 <!-- Simple card -->
                 <div class="card">
-                    <img class="card-img-top img-fluid" src="https://placehold.co/600x400" alt="Card image cap" style="height: 250px;">
+                    <img class="card-img-top img-fluid" src="{{ asset('uploads/sliders/'.$slider->image) }}" alt="Card image cap" style="height: 250px;">
                     <div class="card-header">
-                        <h4 class="card-title mb-0">A day in the of a professional fashion designer</h4>
+                        <h4 class="card-title mb-0">{{ $slider->name }}</h4>
                     </div>
                     <div class="card-body">
-                        <p class="card-text text-muted"> Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee.</p>
+                        <p class="card-text text-muted">{{ $slider->description }}</p>
                     </div>
 
                     <div class="card-footer">
@@ -52,9 +52,9 @@
                 </div>
             </div>
 
-            {{-- @endforeach --}}
+            @endforeach
                               <div style="padding: 20px">
-                                {{-- {{ $spaces->links() }} --}}
+                                {{ $sliders->links() }}
 
                                 </div>
 

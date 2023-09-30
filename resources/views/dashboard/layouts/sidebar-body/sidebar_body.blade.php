@@ -8,7 +8,7 @@
         <ul class="nav nav-sm flex-column">
 
             <li class="nav-item">
-                <a href="" class="nav-link" data-key="t-crm"> {{ __('site.dashboard') }} </a>
+                <a href="{{ route('dashboard.index') }}" class="nav-link" data-key="t-crm"> {{ __('site.dashboard') }} </a>
             </li>
             {{-- <li class="nav-item">
                 <a href="" class="nav-link" data-key="t-analytics"> Website </a>
@@ -99,9 +99,9 @@
 
 
 
-<a href="">
+<a href="{{ route('getevent') }}">
 <li class="nav-item">
-    <a class="nav-link menu-link" href="" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
+    <a class="nav-link menu-link" href="{{ route('getevent') }}" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
 
 
             <i class="mdi mdi-sticker-text-outline"></i> <span data-key="t-pages">{{ __('site.calender') }}</span>

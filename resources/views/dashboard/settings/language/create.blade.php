@@ -23,7 +23,7 @@
                 </div><!-- end card header -->
                 <div class="card-body">
 
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('languages.store') }}" method="POST" enctype="multipart/form-data">
 
                         @csrf
                         <div class="live-preview">
@@ -31,13 +31,13 @@
                                 <div class="mb-3">
                                     <label for="employeeName" class="form-label">Language Title</label>
                                     <input type="text" class="form-control" id="employeeName"
-                                        placeholder="Enter Title name" name="name">
+                                        placeholder="Enter Title" name="title">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="employeeName" class="form-label">Language Abbreviation</label>
                                     <input type="text" class="form-control" id="employeeName"
-                                        placeholder="Enter Language Abbreviation" name="name">
+                                        placeholder="Enter Language Abbreviation" name="abbreviation">
                                 </div>
 
                                 <div class="text-end">

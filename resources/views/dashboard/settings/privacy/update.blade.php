@@ -27,15 +27,13 @@
                     </div><!-- end card header -->
                     <div class="card-body">
                         <div class="live-preview">
-                            <form action="" class="row g-3" method="POST">
+                            <form action="{{ route('privacy.update') }}" class="row g-3" method="POST">
                                 @csrf
                                 @method('PUT')
                                 <div class="mb-3" style="direction: rtl;">
                                     <label>Content</label>
-                                    <textarea name="description" placeholder="Privacy Description" id="description" class="myeditor"></textarea>
+                                    <textarea name="content" placeholder="Privacy Description" id="description" class="myeditor">{{ $privacy->content }}</textarea>
                                 </div>
-
-
 
                                 <div class="col-12">
                                     <div class="text-end">

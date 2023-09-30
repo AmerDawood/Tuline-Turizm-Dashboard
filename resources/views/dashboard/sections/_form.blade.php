@@ -1,8 +1,17 @@
 <div class="mb-3">
     <label for="employeeName" class="form-label">Section Name</label>
     <input type="text" class="form-control" id="employeeName"
-        placeholder="Enter offer name" name="name" value="name">
+        placeholder="Enter offer name" name="name" value="{{ $section->name }}">
 </div>
+
+
+
+
+
+@if($section->image != null)
+<img src="{{ asset('uploads/sections/'.$section->image) }}" height="80px" width="80px" alt="">
+
+@endif
 
 
 <div class="mb-3">
@@ -12,9 +21,9 @@
         <label class="input-group-text" for="image">Upload</label>
     </div>
 </div>
-
 <div class="form-check form-switch form-switch-lg" dir="ltr">
-    <input type="hidden" name="status" value="notavailable"> <!-- Hidden input for unchecked value -->
-    <input type="checkbox" class="form-check-input" id="customSwitchsizelg" name="status" value="available" value="status">
+    <input type="checkbox" class="form-check-input" id="customSwitchsizelg" name="status" {{ $section->status === 'available' ? 'checked' : '' }}>
     <label class="form-check-label" for="customSwitchsizelg">Is Available</label>
 </div>
+
+

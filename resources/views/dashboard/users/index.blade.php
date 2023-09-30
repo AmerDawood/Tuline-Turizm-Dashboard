@@ -18,7 +18,7 @@
                     </div><!-- end card header -->
 
                     <div class="card-body">
-                      
+
                         <div class="live-preview">
                             <div class="table-responsive">
                                 <table class="table table-striped table-nowrap align-middle mb-0">
@@ -27,8 +27,8 @@
                                             <th scope="col">ID</th>
                                             <th scope="col">Name</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Phone Number</th>
                                             <th scope="col">Status</th>
+                                            <th scope="col">Create At</th>
                                             <th scope="col">Actions</th>
 
                                         </tr>
@@ -37,24 +37,23 @@
 
 
 
-                                        {{-- @foreach ($places as  $place)
+                                         @foreach ($users as  $user)
 
                                         <tr>
-                                            <td class="fw-medium">{{ $place->id }}</td>
-                                            <td>{{ $place->name }}</td>
-                                            <td>{{ $place->city }}</td>
+                                            <td class="fw-medium">{{ $user->id }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->status }}</td>
 
-                                            <td>{{ $place->created_at }}</td>
-                                            <td><span class="badge badge-soft-success">{{ $place->state }}</span></td>
-
-
+                                            <td>{{ $user->created_at->diffForHumans() }}</td>
+                                            {{-- <td><span class="badge badge-soft-success">{{ $user->state }}</span></td> --}}
 
                                             <td>
-                                                <a href="{{ route('places.edit', $place->id) }}" class="btn btn-primary btn-sm">
+                                                <a href="" class="btn btn-primary btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
 
-                                                <form action="{{ route('places.destroy', $place->id) }}" method="POST" style="display: inline-block;">
+                                                <form action="" method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm btn-delete">
@@ -64,13 +63,13 @@
                                             </td>
 
                                         </tr>
-                                        @endforeach --}}
+                                        @endforeach
 
                                     </tbody>
 
                                 </table>
                                 <div style="padding: 20px">
-                                    {{-- {{ $places->links() }} --}}
+                                    {{ $users->links() }}
 
                                     </div>
                             </div>

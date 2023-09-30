@@ -21,30 +21,36 @@ class SectionsController extends Controller
 
     public function create()
     {
-        return view('dashboard.sections.create');
+        $section = new Section();
+        return view('dashboard.sections.create',['section'=>$section]);
     }
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        // Validate the incoming request data
         $request->validate([
             'name' => 'required|string',
             'image' => 'required',
             'status' => 'nullable',
         ]);
 
+        // Handle image upload
         $img_name = rand() . time() . $request->file('image')->getClientOriginalExtension();
         $request->file('image')->move(public_path('uploads/sections'), $img_name);
 
+        // Determine the status based on the checkbox value
+        $status = $request->has('status') ? 'available' : 'notavailable';
+
+        // Create a new section with the provided data
         Section::create([
             'name' => $request->name,
             'image' => $img_name,
-            'status' => $request->status,
-
+            'status' => $status,
         ]);
 
-        return redirect()->route('sections.index')->with('msg','Section Created Successfully');
+        return redirect()->route('sections.index')->with('msg', 'Section Created Successfully');
     }
+
 
     public function edit($id)
     {
@@ -55,24 +61,40 @@ class SectionsController extends Controller
     }
 
 
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'nullable|string',
+            'image' => 'nullable',
+            'status' => 'nullable',
+        ]);
 
-            $area = Section::findOrFail($id);
+        $section = Section::findOrFail($id);
 
-            $data = $request->validate([
-                'title' => 'required|string',
-                'description' => 'required|string',
-                'latitude' => 'nullable|numeric',
-                'longitude' => 'nullable|numeric',
+        if ($request->hasFile('image')) {
+            $img_name = rand() . time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $request->file('image')->move(public_path('uploads/sections'), $img_name);
 
-            ]);
+            if (file_exists(public_path('uploads/sections/' . $section->image))) {
+                unlink(public_path('uploads/sections/' . $section->image));
+            }
 
-            $area->update($data);
+            $section->image = $img_name;
+        }
 
-            return redirect()->route('sections.index')->with('msg', 'Section updated successfully');
+        $section->name = $request->name;
 
+        // Update status based on checkbox
+        $status = $request->has('status') ? 'available' : 'notavailable';
+        $section->status = $status;
+
+        // Save
+        $section->save();
+
+        return redirect()->route('sections.index')->with('msg', 'Section Updated Successfully');
     }
+
+
 
 
     public function destroy($id)

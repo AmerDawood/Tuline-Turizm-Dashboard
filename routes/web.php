@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutAppController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AppLanguageController;
 use App\Http\Controllers\Admin\AppThemeController;
@@ -54,6 +55,11 @@ Route::resource('travels',TravelsController::class);
 Route::get('privacy/index',[SettingsController::class,'privacy'])->name('privacy.index');
 Route::get('privacy/update',[SettingsController::class,'updatePrivacy'])->name('privacy.update');
 Route::put('privacy/update',[SettingsController::class,'updateData'])->name('privacy.update');
+
+
+Route::get('about-app/index',[AboutAppController::class,'aboutApp'])->name('aboutApp.index');
+Route::get('about-app/update',[AboutAppController::class,'updateAboutApp'])->name('aboutApp.update');
+Route::put('about-app/update',[AboutAppController::class,'updateData'])->name('aboutApp.update');
 
 
 

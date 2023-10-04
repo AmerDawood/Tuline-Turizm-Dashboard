@@ -69,19 +69,29 @@ class AuthController extends Controller
     {
         $user = $request->user(); // Get the authenticated user
 
-        // Validate and update user data
+        // Validate and update user data, including image upload
         $request->validate([
-            'name' => 'string|max:255', // You can add more validation rules if needed
+            'name' => 'string|max:255',
             'email' => 'email|unique:users,email,' . $user->id,
-            // 'type' => 'string|in:user,admin', // Assuming 'type' can be 'user' or 'admin'
-            // 'status' => 'string|in:active,inactive', // Assuming 'status' can be 'active' or 'inactive'
+            'type' => 'string|in:user,admin',
+            'status' => 'string|in:active,inactive',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules for image upload
         ]);
 
         // Update user data based on request fields
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        // $user->type = $request->input('type');
-        // $user->status = $request->input('status');
+        $user->type = $request->input('type');
+        $user->status = $request->input('status');
+
+        // Handle image upload if an image is provided in the request
+        if ($request->hasFile('image')) {
+            // $img_name = rand() . time() . '.' . $request->file('image')->getClientOriginalExtension();
+            // $request->file('image')->storeAs('public/uploads/offers', $img_name);
+            $img_name = rand() . time() . $request->file('image')->getClientOriginalExtension();
+          $request->file('image')->move(public_path('uploads/users'), $img_name);
+            $user->image = $img_name;
+        }
 
         // Save the updated user
         $user->save();
@@ -90,5 +100,5 @@ class AuthController extends Controller
     }
 
 
-    
+
 }

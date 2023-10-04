@@ -20,4 +20,16 @@ class Service extends Model
         return $this->belongsTo(Area::class, 'area_id');
     }
 
+
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites');
+    }
+
+    // public function getIsFavoriteAttribute()
+    // {
+    //     $user = auth()->user();
+    //     return $user->favorites->contains('id', $this->id);
+    // }
+
 }

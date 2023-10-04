@@ -245,6 +245,9 @@
                     <li class="nav-item">
                         <a href="{{ route('privacy.index') }}" class="nav-link" data-key="t-alerts">{{ __('site.privacy') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ route('aboutApp.index') }}" class="nav-link" data-key="t-badges">About App</a>
+                    </li>
                     <a href="">
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="{{ route('theme.index') }}" data-bs-toggle="collapse role="button aria-expanded="false" aria-controls="sidebarPages">
@@ -256,9 +259,7 @@
 
                         </a>
 
-                    <li class="nav-item">
-                        <a href="" class="nav-link" data-key="t-badges">{{ __('site.app_settings') }}</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
